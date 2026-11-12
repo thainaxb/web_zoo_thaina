@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Participe do WebZoo: programas de educação ambiental, cadastro com consulta de CEP e dicas de cuidado com a natureza.">
+  <title>Participe | WebZoo</title>
+  <link rel="icon" type="image/png" href="assets/logo/favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@700&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/menu.js" defer></script>
+  <script src="js/cep.js" defer></script>
+  <script src="js/formulario.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#conteudo-principal">Pular para o conteúdo principal</a>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand-link" href="index.html" aria-label="WebZoo - Página inicial">
+        <img src="assets/logo/webzoo_logo.png" alt="Logotipo WebZoo" width="180" height="60">
+      </a>
+
+      <button
+        type="button"
+        class="menu-toggle"
+        aria-controls="menu-principal"
+        aria-expanded="false"
+        aria-label="Abrir menu"
+      >
+        <svg class="icon-menu" width="24" height="24" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+          <path d="M3 6h18M3 12h18M3 18h18" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
+        </svg>
+        <svg class="icon-close" width="24" height="24" viewBox="0 0 24 24" aria-hidden="true" focusable="false" hidden>
+          <path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
+        </svg>
+        <span class="menu-toggle-text">Menu</span>
+      </button>
+
+      <nav id="menu-principal" class="site-nav" aria-label="Navegação principal">
+        <ul class="nav-list">
+          <li><a href="index.html">Início</a></li>
+          <li><a href="animais.html">Animais</a></li>
+          <li><a href="visite.html">Visite</a></li>
+          <li><a href="participe.html" aria-current="page">Participe</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="conteudo-principal" tabindex="-1">
+    <section class="page-banner">
+      <div class="container">
+        <h1>Faça parte do WebZoo</h1>
+        <p>Cadastre-se para receber novidades, sugerir conteúdos ou agendar uma visita com a sua escola. Preservar a natureza é uma tarefa coletiva, e toda participação é bem-vinda.</p>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="programas-titulo">
+      <div class="container">
+        <h2 id="programas-titulo">Programas de educação ambiental</h2>
+
+        <div class="grid-2">
+          <article class="card">
+            <h3>Zoo Escola</h3>
+            <p>Visitas guiadas para turmas do ensino fundamental e médio, com roteiro adaptado à idade dos estudantes.</p>
+          </article>
+
+          <article class="card">
+            <h3>Guardiões da Fauna</h3>
+            <p>Oficinas mensais para crianças e adolescentes sobre os animais brasileiros e seus ambientes.</p>
+          </article>
+
+          <article class="card">
+            <h3>Noite no Zoo</h3>
+            <p>Passeio noturno monitorado para conhecer os animais de hábitos noturnos.</p>
+          </article>
+
+          <article class="card">
+            <h3>Professor Parceiro</h3>
+            <p>Materiais gratuitos e encontros de formação para educadores.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-alt" aria-labelledby="cadastro-titulo">
+      <div class="container">
+        <h2 id="cadastro-titulo">Formulário de cadastro e agendamento</h2>
+
+        <aside class="notice-box">
+          <p><strong>Aviso de privacidade:</strong> Site acadêmico. Não informe dados pessoais reais. Este formulário é demonstrativo.</p>
+        </aside>
+
+        <form id="form-participacao" class="signup-form" novalidate>
+          <div class="form-grid">
+            <div class="form-field">
+              <label for="nome">Nome completo <span aria-hidden="true">*</span></label>
+              <input type="text" id="nome" name="nome" required autocomplete="name" aria-describedby="erro-nome">
+              <p id="erro-nome" class="field-error" aria-live="polite"></p>
+            </div>
+
+            <div class="form-field">
+              <label for="email">E-mail <span aria-hidden="true">*</span></label>
+              <input type="email" id="email" name="email" required autocomplete="email" placeholder="nome@exemplo.com" aria-describedby="erro-email">
+              <p id="erro-email" class="field-error" aria-live="polite"></p>
+            </div>
+
+            <div class="form-field">
+              <label for="telefone">Telefone</label>
+              <input type="tel" id="telefone" name="telefone" inputmode="tel" maxlength="15" placeholder="(11) 90000-0000" aria-describedby="erro-telefone">
+              <p id="erro-telefone" class="field-error" aria-live="polite"></p>
+            </div>
+
+            <div class="form-field">
+              <label for="cep">CEP <span aria-hidden="true">*</span></label>
+              <div class="cep-input-row">
+                <input type="text" id="cep" name="cep" inputmode="numeric" maxlength="9" placeholder="00000-000" required aria-describedby="ajuda-cep erro-cep">
+                <button type="button" id="btn-buscar-cep-form" class="btn btn-outline">Buscar CEP</button>
+              </div>
+              <p id="ajuda-cep" class="help-text">Somente números, 8 dígitos (preenche o endereço automaticamente).</p>
+              <p id="erro-cep" class="field-error" aria-live="polite"></p>
+            </div>
+
+            <div class="form-field">
+              <label for="rua">Rua <span aria-hidden="true">*</span></label>
+              <input type="text" id="rua" name="rua" required aria-describedby="erro-rua">
+              <p id="erro-rua" class="field-error" aria-live="polite"></p>
+            </div>
+
+            <div class="form-field">
+              <label for="numero">Número <span aria-hidden="true">*</span></label>
+              <input type="text" id="numero" name="numero" required aria-describedby="erro-numero">
+              <p id="erro-numero" class="field-error" aria-live="polite"></p>
+            </div>
+
+            <div class="form-field">
+              <label for="bairro">Bairro <span aria-hidden="true">*</span></label>
+              <input type="text" id="bairro" name="bairro" required aria-describedby="erro-bairro">
+              <p id="erro-bairro" class="field-error" aria-live="polite"></p>
+            </div>
+
+            <div class="form-field">
+              <label for="cidade">Cidade <span aria-hidden="true">*</span></label>
+              <input type="text" id="cidade" name="cidade" required aria-describedby="erro-cidade">
+              <p id="erro-cidade" class="field-error" aria-live="polite"></p>
+            </div>
+
+            <div class="form-field">
+              <label for="estado">Estado (UF) <span aria-hidden="true">*</span></label>
+              <input type="text" id="estado" name="estado" maxlength="2" required aria-describedby="erro-estado">
+              <p id="erro-estado" class="field-error" aria-live="polite"></p>
+            </div>
+
+            <div class="form-field">
+              <label for="assunto">Assunto <span aria-hidden="true">*</span></label>
+              <select id="assunto" name="assunto" required aria-describedby="erro-assunto">
+                <option value="">Selecione um assunto</option>
+                <option value="Receber novidades">Receber novidades</option>
+                <option value="Visita escolar">Visita escolar</option>
+                <option value="Sugerir conteúdo">Sugerir conteúdo</option>
+                <option value="Outro">Outro</option>
+              </select>
+              <p id="erro-assunto" class="field-error" aria-live="polite"></p>
+            </div>
+
+            <div class="form-field">
+              <label for="animal-favorito">Animal favorito</label>
+              <select id="animal-favorito" name="animal_favorito">
+                <option value="">Escolha opcionalmente</option>
+                <option value="Onça-pintada">Onça-pintada</option>
+                <option value="Tucano-toco">Tucano-toco</option>
+                <option value="Capivara">Capivara</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-field">
+            <label for="mensagem">Mensagem <span aria-hidden="true">*</span></label>
+            <textarea id="mensagem" name="mensagem" rows="4" maxlength="500" required aria-describedby="contador-mensagem erro-mensagem"></textarea>
+            <p id="contador-mensagem" class="help-text">0 / 500 caracteres</p>
+            <p id="erro-mensagem" class="field-error" aria-live="polite"></p>
+          </div>
+
+          <div class="form-field checkbox-field">
+            <input type="checkbox" id="aceite" name="aceite" required aria-describedby="erro-aceite">
+            <label for="aceite">Aceito receber comunicações do WebZoo. <span aria-hidden="true">*</span></label>
+            <p id="erro-aceite" class="field-error" aria-live="polite"></p>
+          </div>
+
+          <button type="submit" class="btn btn-primary">Enviar cadastro</button>
+
+          <div id="mensagem-sucesso" class="success-banner" role="status" aria-live="polite" hidden></div>
+        </form>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="ajudar-titulo">
+      <div class="container">
+        <h2 id="ajudar-titulo">Como você pode ajudar a natureza</h2>
+        <ul class="care-grid clean-list">
+          <li>Descarte o lixo nos locais adequados.</li>
+          <li>Observe os animais sem tocar ou oferecer alimentos.</li>
+          <li>Respeite a vegetação e os espaços de preservação.</li>
+          <li>Nunca compre animais silvestres sem origem legal.</li>
+          <li>Reduza o uso de plásticos descartáveis.</li>
+          <li>Economize água e energia.</li>
+          <li>Ao dirigir em estradas próximas a áreas naturais, reduza a velocidade.</li>
+          <li>Denuncie maus-tratos e tráfico de animais aos órgãos ambientais.</li>
+          <li>Compartilhe o que você aprendeu com familiares e amigos.</li>
+        </ul>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div>
+        <p class="footer-title">WebZoo — Educação ambiental</p>
+        <p>Projeto acadêmico e fictício, sem fins comerciais, desenvolvido na disciplina de Front-End — SENAI “Comendador Santoro Mirone”.</p>
+        <p><strong>Desenvolvido por:</strong> [Seu Nome] — Turma [Sua Turma]</p>
+      </div>
+
+      <div>
+        <p class="footer-title">Localização e contato</p>
+        <address>
+          Zoológico de São Paulo<br>
+          Av. Miguel Estéfano, 4241 - Água Funda, São Paulo - SP · CEP 04301-905<br>
+          Telefone (fictício): (11) 5555-0142 · E-mail: contato@webzoo.example
+        </address>
+      </div>
+
+      <div>
+        <p class="footer-title">Créditos e dados externos</p>
+        <p>Imagens ilustrativas criadas por IA para a atividade. Tipografia: Merriweather e Source Sans 3 (Google Fonts).</p>
+        <p>Dados externos fornecidos por: <a href="https://viacep.com.br" target="_blank" rel="noopener noreferrer">ViaCEP</a>, <a href="https://open-meteo.com" target="_blank" rel="noopener noreferrer">Open-Meteo</a> e <a href="https://pt.wikipedia.org/api/rest_v1/" target="_blank" rel="noopener noreferrer">API REST da Wikipédia</a>.</p>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

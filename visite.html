@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Planeje sua visita ao WebZoo: horários, ingressos, consulta de CEP de partida, previsão do tempo e perguntas frequentes.">
+  <title>Visite | WebZoo</title>
+  <link rel="icon" type="image/png" href="assets/logo/favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@700&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/menu.js" defer></script>
+  <script src="js/cep.js" defer></script>
+  <script src="js/clima.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#conteudo-principal">Pular para o conteúdo principal</a>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand-link" href="index.html" aria-label="WebZoo - Página inicial">
+        <img src="assets/logo/webzoo_logo.png" alt="Logotipo WebZoo" width="180" height="60">
+      </a>
+
+      <button
+        type="button"
+        class="menu-toggle"
+        aria-controls="menu-principal"
+        aria-expanded="false"
+        aria-label="Abrir menu"
+      >
+        <svg class="icon-menu" width="24" height="24" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+          <path d="M3 6h18M3 12h18M3 18h18" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
+        </svg>
+        <svg class="icon-close" width="24" height="24" viewBox="0 0 24 24" aria-hidden="true" focusable="false" hidden>
+          <path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
+        </svg>
+        <span class="menu-toggle-text">Menu</span>
+      </button>
+
+      <nav id="menu-principal" class="site-nav" aria-label="Navegação principal">
+        <ul class="nav-list">
+          <li><a href="index.html">Início</a></li>
+          <li><a href="animais.html">Animais</a></li>
+          <li><a href="visite.html" aria-current="page">Visite</a></li>
+          <li><a href="participe.html">Participe</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="conteudo-principal" tabindex="-1">
+    <section class="page-banner">
+      <div class="container">
+        <h1>Planeje sua visita</h1>
+        <p>Um bom passeio começa antes de sair de casa. Confira os horários, veja como chegar e consulte a previsão do tempo para escolher o melhor dia.</p>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="horarios-ingressos-titulo">
+      <div class="container grid-2">
+        <article class="card">
+          <h2 id="horarios-ingressos-titulo">Horário de funcionamento</h2>
+          <ul class="clean-list">
+            <li><strong>Terça a sexta-feira:</strong> das <time datetime="09:00">9h</time> às <time datetime="17:00">17h</time></li>
+            <li><strong>Sábados, domingos e feriados:</strong> das <time datetime="09:00">9h</time> às <time datetime="18:00">18h</time></li>
+            <li><strong>Segunda-feira:</strong> fechado para manutenção</li>
+          </ul>
+          <p>A entrada é permitida até uma hora antes do fechamento. Valores e horários fictícios para fins educativos.</p>
+        </article>
+
+        <article class="card">
+          <h2>Valores dos ingressos</h2>
+          <div class="table-wrapper">
+            <table>
+              <caption>Tabela de valores de ingressos (fictícios)</caption>
+              <thead>
+                <tr>
+                  <th scope="col">Categoria</th>
+                  <th scope="col">Observação</th>
+                  <th scope="col">Valor</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th scope="row">Inteira</th>
+                  <td>Público geral</td>
+                  <td>R$ 60,00</td>
+                </tr>
+                <tr>
+                  <th scope="row">Meia-entrada</th>
+                  <td>Estudantes, professores e 60+</td>
+                  <td>R$ 30,00</td>
+                </tr>
+                <tr>
+                  <th scope="row">Infantil</th>
+                  <td>Crianças de até 4 anos</td>
+                  <td>Gratuito</td>
+                </tr>
+                <tr>
+                  <th scope="row">Escolar</th>
+                  <td>Grupos escolares agendados</td>
+                  <td>R$ 20,00 / estudante</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section section-alt" aria-labelledby="apis-visita-titulo">
+      <div class="container">
+        <h2 id="apis-visita-titulo">Informações em tempo real para o seu passeio</h2>
+
+        <div class="grid-2">
+          <article class="card" aria-labelledby="clima-titulo">
+            <h3 id="clima-titulo">Como está o tempo no zoológico?</h3>
+            <p>Previsão atualizada para a região da Água Funda, São Paulo - SP.</p>
+
+            <div id="clima-resultado" class="api-box" aria-live="polite">
+              <p>Consultando a previsão do tempo...</p>
+            </div>
+
+            <button type="button" id="btn-atualizar-clima" class="btn btn-outline">
+              Atualizar previsão
+            </button>
+            <p class="api-credit">Dados meteorológicos: <a href="https://open-meteo.com" target="_blank" rel="noopener noreferrer">Open-Meteo</a>.</p>
+          </article>
+
+          <article class="card" aria-labelledby="como-chegar-titulo">
+            <h3 id="como-chegar-titulo">Como chegar e ponto de partida</h3>
+            <address>
+              <strong>Zoológico de São Paulo</strong><br>
+              Av. Miguel Estéfano, 4241 - Água Funda, São Paulo - SP
+            </address>
+            <p><strong>Transporte público:</strong> linhas de ônibus partem de estações de metrô da região. <strong>Carro:</strong> estacionamento pago no local.</p>
+
+            <form id="form-cep-visita" class="cep-inline-form" novalidate>
+              <label for="cep-visita">Digite o seu CEP</label>
+              <p id="ajuda-cep-visita" class="help-text">Somente números, 8 dígitos.</p>
+              <div class="cep-input-row">
+                <input
+                  type="text"
+                  id="cep-visita"
+                  name="cep"
+                  inputmode="numeric"
+                  maxlength="9"
+                  placeholder="00000-000"
+                  aria-describedby="ajuda-cep-visita cep-visita-status"
+                >
+                <button type="submit" id="btn-buscar-cep-visita" class="btn btn-primary">
+                  Buscar endereço
+                </button>
+              </div>
+              <div id="cep-visita-status" class="api-box" aria-live="polite"></div>
+            </form>
+            <p class="api-credit">Consulta de endereço: <a href="https://viacep.com.br" target="_blank" rel="noopener noreferrer">ViaCEP</a>.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="regras-titulo">
+      <div class="container grid-3">
+        <article class="card">
+          <h2 id="regras-titulo">Regras da visita</h2>
+          <ul class="clean-list">
+            <li>Não alimente os animais.</li>
+            <li>Não bata nos vidros nem atire objetos nos recintos.</li>
+            <li>Fale baixo perto dos recintos.</li>
+            <li>Não utilize flash ao fotografar.</li>
+            <li>Descarte o lixo nas lixeiras de coleta seletiva.</li>
+            <li>Animais de estimação não são permitidos.</li>
+          </ul>
+        </article>
+
+        <article class="card">
+          <h2>Dicas para o passeio</h2>
+          <ul class="clean-list">
+            <li>Chegue cedo: pela manhã os animais costumam estar mais ativos.</li>
+            <li>Use roupas leves e calçados confortáveis.</li>
+            <li>Leve uma garrafa de água reutilizável.</li>
+            <li>Reserve pelo menos três horas para a visita.</li>
+          </ul>
+        </article>
+
+        <article class="card">
+          <h2>Acessibilidade no parque</h2>
+          <ul class="clean-list">
+            <li>Rotas acessíveis para cadeiras de rodas e carrinhos de bebê.</li>
+            <li>Empréstimo de cadeiras de rodas na entrada, mediante disponibilidade.</li>
+            <li>Sanitários acessíveis e fraldários.</li>
+            <li>Atendimento prioritário nas bilheterias.</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <section class="section section-alt" aria-labelledby="faq-titulo">
+      <div class="container">
+        <h2 id="faq-titulo">Perguntas frequentes</h2>
+
+        <div class="faq-list">
+          <details class="faq-item">
+            <summary>Posso levar alimentos?</summary>
+            <p>Sim. Há áreas de piquenique para lanches trazidos de casa. Não é permitido oferecer alimentos aos animais.</p>
+          </details>
+
+          <details class="faq-item">
+            <summary>O zoológico abre em dias de chuva?</summary>
+            <p>Sim, o funcionamento é normal. Algumas atividades ao ar livre podem ser suspensas em caso de tempestade.</p>
+          </details>
+
+          <details class="faq-item">
+            <summary>Quanto tempo dura a visita?</summary>
+            <p>Em média, de três a quatro horas para percorrer os principais recintos.</p>
+          </details>
+
+          <details class="faq-item">
+            <summary>Posso fotografar os animais?</summary>
+            <p>Sim, sem o uso de flash e sem ultrapassar as barreiras de segurança.</p>
+          </details>
+
+          <details class="faq-item">
+            <summary>Há onde guardar mochilas?</summary>
+            <p>Sim, há guarda-volumes próximo à entrada, mediante disponibilidade.</p>
+          </details>
+
+          <details class="faq-item">
+            <summary>Como agendar a visita de uma escola?</summary>
+            <p>Preencha o formulário da página <a href="participe.html">Participe</a> e selecione a opção “Visita escolar”.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div>
+        <p class="footer-title">WebZoo — Educação ambiental</p>
+        <p>Projeto acadêmico e fictício, sem fins comerciais, desenvolvido na disciplina de Front-End — SENAI “Comendador Santoro Mirone”.</p>
+        <p><strong>Desenvolvido por:</strong> [Seu Nome] — Turma [Sua Turma]</p>
+      </div>
+
+      <div>
+        <p class="footer-title">Localização e contato</p>
+        <address>
+          Zoológico de São Paulo<br>
+          Av. Miguel Estéfano, 4241 - Água Funda, São Paulo - SP · CEP 04301-905<br>
+          Telefone (fictício): (11) 5555-0142 · E-mail: contato@webzoo.example
+        </address>
+      </div>
+
+      <div>
+        <p class="footer-title">Créditos e dados externos</p>
+        <p>Imagens ilustrativas criadas por IA para a atividade. Tipografia: Merriweather e Source Sans 3 (Google Fonts).</p>
+        <p>Dados externos fornecidos por: <a href="https://viacep.com.br" target="_blank" rel="noopener noreferrer">ViaCEP</a>, <a href="https://open-meteo.com" target="_blank" rel="noopener noreferrer">Open-Meteo</a> e <a href="https://pt.wikipedia.org/api/rest_v1/" target="_blank" rel="noopener noreferrer">API REST da Wikipédia</a>.</p>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

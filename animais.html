@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Fichas educativas dos animais do WebZoo com filtros por classe, alimentação, bioma e resumo da Wikipédia.">
+  <title>Animais | WebZoo</title>
+  <link rel="icon" type="image/png" href="assets/logo/favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@700&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/menu.js" defer></script>
+  <script src="js/animais.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#conteudo-principal">Pular para o conteúdo principal</a>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand-link" href="index.html" aria-label="WebZoo - Página inicial">
+        <img src="assets/logo/webzoo_logo.png" alt="Logotipo WebZoo" width="180" height="60">
+      </a>
+
+      <button
+        type="button"
+        class="menu-toggle"
+        aria-controls="menu-principal"
+        aria-expanded="false"
+        aria-label="Abrir menu"
+      >
+        <svg class="icon-menu" width="24" height="24" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+          <path d="M3 6h18M3 12h18M3 18h18" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
+        </svg>
+        <svg class="icon-close" width="24" height="24" viewBox="0 0 24 24" aria-hidden="true" focusable="false" hidden>
+          <path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
+        </svg>
+        <span class="menu-toggle-text">Menu</span>
+      </button>
+
+      <nav id="menu-principal" class="site-nav" aria-label="Navegação principal">
+        <ul class="nav-list">
+          <li><a href="index.html">Início</a></li>
+          <li><a href="animais.html" aria-current="page">Animais</a></li>
+          <li><a href="visite.html">Visite</a></li>
+          <li><a href="participe.html">Participe</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="conteudo-principal" tabindex="-1">
+    <section class="page-banner">
+      <div class="container">
+        <h1>Animais do WebZoo</h1>
+        <p>O Brasil é um dos países com maior diversidade de animais do planeta. Use os filtros abaixo para encontrar espécies por classe, alimentação, bioma ou favoritos.</p>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="filtros-titulo">
+      <div class="container">
+        <h2 id="filtros-titulo" class="visually-hidden">Filtrar animais</h2>
+
+        <form class="filters-bar" id="form-filtros" aria-label="Filtros de animais">
+          <div class="filter-group">
+            <label for="filtro-classe">Classe</label>
+            <select id="filtro-classe" name="classe">
+              <option value="todos">Todas as classes</option>
+              <option value="Mamífero">Mamífero</option>
+              <option value="Ave">Ave</option>
+            </select>
+          </div>
+
+          <div class="filter-group">
+            <label for="filtro-alimentacao">Alimentação</label>
+            <select id="filtro-alimentacao" name="alimentacao">
+              <option value="todos">Todas as alimentações</option>
+              <option value="Carnívoro">Carnívoro</option>
+              <option value="Onívoro">Onívoro</option>
+              <option value="Herbívoro">Herbívoro</option>
+            </select>
+          </div>
+
+          <div class="filter-group">
+            <label for="filtro-bioma">Bioma</label>
+            <select id="filtro-bioma" name="bioma">
+              <option value="todos">Todos os biomas</option>
+              <option value="Amazônia">Amazônia</option>
+              <option value="Cerrado">Cerrado</option>
+              <option value="Pantanal">Pantanal</option>
+              <option value="Mata Atlântica">Mata Atlântica</option>
+            </select>
+          </div>
+
+          <div class="filter-actions">
+            <button type="button" id="btn-favoritos" class="btn btn-outline" aria-pressed="false">
+              Apenas favoritos
+            </button>
+            <button type="button" id="btn-limpar-filtros" class="btn btn-secondary">
+              Limpar filtros
+            </button>
+          </div>
+        </form>
+
+        <p id="status-filtros" class="status-text" aria-live="polite">Exibindo 3 animais.</p>
+
+        <div class="animals-grid" id="lista-animais">
+          <article
+            id="onca-pintada"
+            class="animal-card"
+            data-id="onca-pintada"
+            data-classe="Mamífero"
+            data-alimentacao="Carnívoro"
+            data-bioma="Amazônia,Pantanal,Cerrado,Mata Atlântica,Caatinga"
+          >
+            <figure class="card-figure">
+              <img
+                src="assets/imagens/onca_pintada.png"
+                alt="Onça-pintada com pelagem dourada e manchas em roseta próxima a um rio."
+                width="600"
+                height="400"
+              >
+              <figcaption><em>Panthera onca</em> — Maior felino das Américas</figcaption>
+            </figure>
+
+            <div class="animal-card-body">
+              <div class="card-top-row">
+                <span class="tag tag-warning">Quase ameaçada</span>
+                <button
+                  type="button"
+                  class="btn-fav"
+                  data-fav="onca-pintada"
+                  aria-pressed="false"
+                  aria-label="Favoritar Onça-pintada"
+                >
+                  Favoritar
+                </button>
+              </div>
+
+              <h3>Onça-pintada</h3>
+              <p class="scientific-name"><em>Panthera onca</em></p>
+
+              <dl class="specs-list">
+                <div><dt>Classe:</dt><dd>Mamífero</dd></div>
+                <div><dt>Alimentação:</dt><dd>Carnívoro</dd></div>
+                <div><dt>Biomas:</dt><dd>Amazônia, Pantanal, Cerrado, Mata Atlântica e Caatinga</dd></div>
+                <div><dt>Conservação:</dt><dd>Quase ameaçada</dd></div>
+              </dl>
+
+              <p>
+                A onça-pintada é o maior felino das Américas e o terceiro maior do mundo. Suas manchas em forma de rosetas são únicas em cada indivíduo, como uma impressão digital. Diferentemente da maioria dos felinos, gosta de água e é excelente nadadora.
+              </p>
+
+              <button
+                type="button"
+                class="btn btn-primary btn-wiki"
+                data-wiki="Panthera_onca"
+                data-target="wiki-onca-pintada"
+              >
+                Saiba mais sobre onça-pintada
+              </button>
+              <div id="wiki-onca-pintada" class="wiki-box" aria-live="polite" hidden></div>
+            </div>
+          </article>
+
+          <article
+            id="tucano-toco"
+            class="animal-card"
+            data-id="tucano-toco"
+            data-classe="Ave"
+            data-alimentacao="Onívoro"
+            data-bioma="Cerrado,Pantanal,Mata Atlântica"
+          >
+            <figure class="card-figure">
+              <img
+                src="assets/imagens/tucano_toco.png"
+                alt="Tucano-toco com plumagem preta, peito branco e bico laranja pousado em um galho."
+                width="600"
+                height="400"
+              >
+              <figcaption><em>Ramphastos toco</em> — Maior espécie de tucano</figcaption>
+            </figure>
+
+            <div class="animal-card-body">
+              <div class="card-top-row">
+                <span class="tag tag-safe">Pouco preocupante</span>
+                <button
+                  type="button"
+                  class="btn-fav"
+                  data-fav="tucano-toco"
+                  aria-pressed="false"
+                  aria-label="Favoritar Tucano-toco"
+                >
+                  Favoritar
+                </button>
+              </div>
+
+              <h3>Tucano-toco</h3>
+              <p class="scientific-name"><em>Ramphastos toco</em></p>
+
+              <dl class="specs-list">
+                <div><dt>Classe:</dt><dd>Ave</dd></div>
+                <div><dt>Alimentação:</dt><dd>Onívoro</dd></div>
+                <div><dt>Biomas:</dt><dd>Cerrado, Pantanal e bordas de matas</dd></div>
+                <div><dt>Conservação:</dt><dd>Pouco preocupante</dd></div>
+              </dl>
+
+              <p>
+                O tucano-toco possui bico alaranjado que pode chegar a 20 cm de comprimento, mas é extremamente leve por ser formado de queratina porosa. Ele ajuda a alcançar frutos em galhos finos, dispersar sementes e regular a temperatura corporal.
+              </p>
+
+              <button
+                type="button"
+                class="btn btn-primary btn-wiki"
+                data-wiki="Ramphastos_toco"
+                data-target="wiki-tucano-toco"
+              >
+                Saiba mais sobre tucano-toco
+              </button>
+              <div id="wiki-tucano-toco" class="wiki-box" aria-live="polite" hidden></div>
+            </div>
+          </article>
+
+          <article
+            id="capivara"
+            class="animal-card"
+            data-id="capivara"
+            data-classe="Mamífero"
+            data-alimentacao="Herbívoro"
+            data-bioma="Amazônia,Cerrado,Pantanal,Mata Atlântica"
+          >
+            <figure class="card-figure">
+              <img
+                src="assets/imagens/capivara.png"
+                alt="Capivara marrom próxima a um curso de água cercado por vegetação."
+                width="600"
+                height="400"
+              >
+              <figcaption><em>Hydrochoerus hydrochaeris</em> — Maior roedor do mundo</figcaption>
+            </figure>
+
+            <div class="animal-card-body">
+              <div class="card-top-row">
+                <span class="tag tag-safe">Pouco preocupante</span>
+                <button
+                  type="button"
+                  class="btn-fav"
+                  data-fav="capivara"
+                  aria-pressed="false"
+                  aria-label="Favoritar Capivara"
+                >
+                  Favoritar
+                </button>
+              </div>
+
+              <h3>Capivara</h3>
+              <p class="scientific-name"><em>Hydrochoerus hydrochaeris</em></p>
+
+              <dl class="specs-list">
+                <div><dt>Classe:</dt><dd>Mamífero</dd></div>
+                <div><dt>Alimentação:</dt><dd>Herbívoro</dd></div>
+                <div><dt>Biomas:</dt><dd>Presente em quase todo o Brasil, sempre perto da água</dd></div>
+                <div><dt>Conservação:</dt><dd>Pouco preocupante</dd></div>
+              </dl>
+
+              <p>
+                Animal semiaquático que vive em grupos familiares de dez a vinte indivíduos. Seus olhos, orelhas e narinas ficam no alto da cabeça, permitindo observar o ambiente enquanto permanece quase toda submersa.
+              </p>
+
+              <button
+                type="button"
+                class="btn btn-primary btn-wiki"
+                data-wiki="Hydrochoerus_hydrochaeris"
+                data-target="wiki-capivara"
+              >
+                Saiba mais sobre capivara
+              </button>
+              <div id="wiki-capivara" class="wiki-box" aria-live="polite" hidden></div>
+            </div>
+          </article>
+        </div>
+
+        <p id="mensagem-vazia" class="empty-state" hidden>
+          Nenhum animal encontrado com esses filtros.
+        </p>
+
+        <aside class="legend-box" aria-labelledby="legenda-titulo">
+          <h2 id="legenda-titulo">Legenda do estado de conservação (IUCN)</h2>
+          <ul class="clean-list">
+            <li><strong>Pouco preocupante:</strong> a espécie não corre risco imediato.</li>
+            <li><strong>Quase ameaçada:</strong> pode se tornar ameaçada em um futuro próximo.</li>
+            <li><strong>Vulnerável:</strong> enfrenta risco alto de extinção na natureza.</li>
+            <li><strong>Em perigo:</strong> enfrenta risco muito alto de extinção na natureza.</li>
+          </ul>
+        </aside>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div>
+        <p class="footer-title">WebZoo — Educação ambiental</p>
+        <p>Projeto acadêmico e fictício, sem fins comerciais, desenvolvido na disciplina de Front-End — SENAI “Comendador Santoro Mirone”.</p>
+        <p><strong>Desenvolvido por:</strong> [Seu Nome] — Turma [Sua Turma]</p>
+      </div>
+
+      <div>
+        <p class="footer-title">Localização e contato</p>
+        <address>
+          Zoológico de São Paulo<br>
+          Av. Miguel Estéfano, 4241 - Água Funda, São Paulo - SP · CEP 04301-905<br>
+          Telefone (fictício): (11) 5555-0142 · E-mail: contato@webzoo.example
+        </address>
+      </div>
+
+      <div>
+        <p class="footer-title">Créditos e dados externos</p>
+        <p>Imagens ilustrativas criadas por IA para a atividade. Tipografia: Merriweather e Source Sans 3 (Google Fonts).</p>
+        <p>Dados externos fornecidos por: <a href="https://viacep.com.br" target="_blank" rel="noopener noreferrer">ViaCEP</a>, <a href="https://open-meteo.com" target="_blank" rel="noopener noreferrer">Open-Meteo</a> e <a href="https://pt.wikipedia.org/api/rest_v1/" target="_blank" rel="noopener noreferrer">API REST da Wikipédia</a>.</p>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
