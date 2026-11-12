@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="WebZoo: plataforma de educação ambiental do Zoológico de São Paulo. Conhecer para preservar.">
+  <title>Início | WebZoo</title>
+  <link rel="icon" type="image/png" href="assets/logo/favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@700&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/menu.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#conteudo-principal">Pular para o conteúdo principal</a>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand-link" href="index.html" aria-label="WebZoo - Página inicial">
+        <img src="assets/logo/webzoo_logo.png" alt="Logotipo WebZoo" width="180" height="60">
+      </a>
+
+      <button
+        type="button"
+        class="menu-toggle"
+        aria-controls="menu-principal"
+        aria-expanded="false"
+        aria-label="Abrir menu"
+      >
+        <svg class="icon-menu" width="24" height="24" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+          <path d="M3 6h18M3 12h18M3 18h18" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
+        </svg>
+        <svg class="icon-close" width="24" height="24" viewBox="0 0 24 24" aria-hidden="true" focusable="false" hidden>
+          <path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
+        </svg>
+        <span class="menu-toggle-text">Menu</span>
+      </button>
+
+      <nav id="menu-principal" class="site-nav" aria-label="Navegação principal">
+        <ul class="nav-list">
+          <li><a href="index.html" aria-current="page">Início</a></li>
+          <li><a href="animais.html">Animais</a></li>
+          <li><a href="visite.html">Visite</a></li>
+          <li><a href="participe.html">Participe</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="conteudo-principal" tabindex="-1">
+    <section class="hero" aria-labelledby="titulo-principal">
+      <div class="container hero-grid">
+        <div class="hero-content">
+          <span class="badge">Educação Ambiental · Zoológico de São Paulo</span>
+          <h1 id="titulo-principal">WebZoo: conhecer para preservar</h1>
+          <p class="hero-lead">
+            Explore a fauna brasileira, descubra como vivem os animais e aprenda o que cada um de nós pode fazer para proteger os ambientes naturais.
+          </p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="animais.html">Conheça os animais</a>
+            <a class="btn btn-secondary" href="visite.html">Planeje sua visita</a>
+          </div>
+        </div>
+
+        <figure class="hero-media">
+          <img
+            src="assets/imagens/floresta.png"
+            alt="Trecho preservado de Mata Atlântica com árvores altas, samambaias verdes e um riacho correndo entre pedras."
+            width="800"
+            height="533"
+          >
+          <figcaption>Mata Atlântica preservada: lar de centenas de espécies da fauna brasileira.</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="sobre-titulo">
+      <div class="container">
+        <header class="section-header">
+          <h2 id="sobre-titulo">Sobre o WebZoo</h2>
+          <p>
+            O WebZoo é uma plataforma de educação ambiental do Zoológico de São Paulo. Criada para aproximar estudantes, famílias e professores da fauna brasileira, a plataforma reúne fichas de espécies e orientações para quem deseja visitar o parque.
+          </p>
+        </header>
+
+        <div class="grid-3">
+          <article class="card">
+            <h3>Missão</h3>
+            <p>Despertar o interesse pela vida selvagem e transformar curiosidade em atitude de preservação.</p>
+          </article>
+
+          <article class="card">
+            <h3>Visão</h3>
+            <p>Ser uma referência digital em educação ambiental, acessível a qualquer pessoa, em qualquer dispositivo.</p>
+          </article>
+
+          <article class="card">
+            <h3>Valores</h3>
+            <ul class="clean-list">
+              <li><strong>Respeito à vida:</strong> os animais vêm em primeiro lugar.</li>
+              <li><strong>Conhecimento:</strong> informação clara, correta e com fonte.</li>
+              <li><strong>Inclusão:</strong> conteúdo acessível a todas as pessoas.</li>
+              <li><strong>Responsabilidade:</strong> cada atitude individual conta.</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-alt" aria-labelledby="destaques-titulo">
+      <div class="container">
+        <header class="section-header">
+          <h2 id="destaques-titulo">Animais em destaque</h2>
+          <p>Conheça três espécies emblemáticas da biodiversidade brasileira e acesse suas fichas completas.</p>
+        </header>
+
+        <div class="animals-grid">
+          <article class="animal-card">
+            <img
+              src="assets/imagens/onca_pintada.png"
+              alt="Onça-pintada com pelagem dourada e manchas pretas em roseta caminhando à beira de um rio na floresta."
+              width="600"
+              height="400"
+            >
+            <div class="animal-card-body">
+              <span class="tag tag-warning">Quase ameaçada</span>
+              <h3>Onça-pintada</h3>
+              <p class="scientific-name"><em>Panthera onca</em></p>
+              <p>A onça-pintada é um felino de pelagem marcada por manchas. É carnívora e pode ser encontrada em ambientes como florestas e áreas do Pantanal.</p>
+              <a class="btn btn-outline" href="animais.html#onca-pintada">Saiba mais sobre onça-pintada</a>
+            </div>
+          </article>
+
+          <article class="animal-card">
+            <img
+              src="assets/imagens/tucano_toco.png"
+              alt="Tucano-toco de plumagem preta, garganta branca e bico alaranjado grande pousado em um galho com folhas verdes."
+              width="600"
+              height="400"
+            >
+            <div class="animal-card-body">
+              <span class="tag tag-safe">Pouco preocupante</span>
+              <h3>Tucano-toco</h3>
+              <p class="scientific-name"><em>Ramphastos toco</em></p>
+              <p>O tucano-toco é uma ave conhecida pelo bico grande e colorido. Alimenta-se de frutos e também de pequenos animais. Pode ser encontrado em áreas como o Cerrado.</p>
+              <a class="btn btn-outline" href="animais.html#tucano-toco">Saiba mais sobre tucano-toco</a>
+            </div>
+          </article>
+
+          <article class="animal-card">
+            <img
+              src="assets/imagens/capivara.png"
+              alt="Capivara de pelagem marrom sentada sobre a grama verde às margens de um rio."
+              width="600"
+              height="400"
+            >
+            <div class="animal-card-body">
+              <span class="tag tag-safe">Pouco preocupante</span>
+              <h3>Capivara</h3>
+              <p class="scientific-name"><em>Hydrochoerus hydrochaeris</em></p>
+              <p>A capivara é um roedor que vive em grupos e costuma permanecer perto de rios e lagos. É herbívora e se alimenta de plantas.</p>
+              <a class="btn btn-outline" href="animais.html#capivara">Saiba mais sobre capivara</a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="numeros-titulo">
+      <div class="container">
+        <h2 id="numeros-titulo">WebZoo em números e curiosidades</h2>
+
+        <div class="stats-grid">
+          <article class="stat-card">
+            <p class="stat-number">3</p>
+            <p class="stat-label">Animais em destaque com ficha completa</p>
+          </article>
+          <article class="stat-card">
+            <p class="stat-number">4</p>
+            <p class="stat-label">Programas de educação ambiental</p>
+          </article>
+          <article class="stat-card">
+            <p class="stat-number">100%</p>
+            <p class="stat-label">Do conteúdo educativo gratuito</p>
+          </article>
+        </div>
+
+        <aside class="curiosities-box" aria-labelledby="sabia-titulo">
+          <h3 id="sabia-titulo">Você sabia?</h3>
+          <ul class="clean-list">
+            <li>A onça-pintada é o maior felino das Américas e possui mordida capaz de quebrar cascos de tartaruga.</li>
+            <li>A capivara é o maior roedor do mundo e consegue ficar alguns minutos submersa sem respirar.</li>
+            <li>O bico do tucano-toco é leve, formado por queratina, e ajuda a controlar a temperatura do corpo.</li>
+          </ul>
+        </aside>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div>
+        <p class="footer-title">WebZoo — Educação ambiental</p>
+        <p>Projeto acadêmico e fictício, sem fins comerciais, desenvolvido na disciplina de Front-End — SENAI “Comendador Santoro Mirone”.</p>
+        <p><strong>Desenvolvido por:</strong> [Seu Nome] — Turma [Sua Turma]</p>
+      </div>
+
+      <div>
+        <p class="footer-title">Localização e contato</p>
+        <address>
+          Zoológico de São Paulo<br>
+          Av. Miguel Estéfano, 4241 - Água Funda, São Paulo - SP · CEP 04301-905<br>
+          Telefone (fictício): (11) 5555-0142 · E-mail: contato@webzoo.example
+        </address>
+      </div>
+
+      <div>
+        <p class="footer-title">Créditos e dados externos</p>
+        <p>Imagens ilustrativas criadas por IA para a atividade. Tipografia: Merriweather e Source Sans 3 (Google Fonts).</p>
+        <p>Dados externos fornecidos por: <a href="https://viacep.com.br" target="_blank" rel="noopener noreferrer">ViaCEP</a>, <a href="https://open-meteo.com" target="_blank" rel="noopener noreferrer">Open-Meteo</a> e <a href="https://pt.wikipedia.org/api/rest_v1/" target="_blank" rel="noopener noreferrer">API REST da Wikipédia</a>.</p>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
